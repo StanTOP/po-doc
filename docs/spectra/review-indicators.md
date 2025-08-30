@@ -1,5 +1,5 @@
 ---
-title: Индикаторы
+title: Описание ндикаторов
 sidebar_position: 13
 ---
 
