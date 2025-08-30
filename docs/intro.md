@@ -23,9 +23,9 @@ description: "Документация команды МНОГО ДЕНЕГ TRAD
 
 ## 🔗 Быстрые ссылки
 
-- 👉 [Enigma / Обзор](./enigma/overview)
+<!-- - 👉 [Enigma / Обзор](./enigma/overview)
 - 👉 [Spectra Charts / Обзор](./spectra/overview)  
-- 👉 [Spectra Bot Builder / Обзор](./bots/overview)  
+- 👉 [Spectra Bot Builder / Обзор](./bots/overview)   -->
 
 ---
 

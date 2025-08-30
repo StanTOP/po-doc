@@ -31,9 +31,9 @@ description: "Памятка для новичков: с чего начать �
 
 ## 🔗 Быстрые ссылки
 
-- 👉 [Enigma / Обзор](../Enigma/overview)  
+<!-- - 👉 [Enigma / Обзор](../Enigma/overview)  
 - 👉 [Spectra Charts / Обзор](../spectra/overview)  
-- 👉 [Spectra Bot Builder / Обзор](../bots/overview)
+- 👉 [Spectra Bot Builder / Обзор](../bots/overview) -->
 
 ---
 
