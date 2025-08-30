@@ -111,7 +111,7 @@ const config = {
             items: [
               {
                 label: 'Документация',
-                to: '/docs/intro',
+                to: '/docs/',
               },
             ],
           },
