@@ -1,0 +1,14 @@
+{
+  "version.label": {
+    "message": "Вперед",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Spectra Charts": {
+    "message": "Spectra Charts",
+    "description": "The label for category Spectra Charts in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Spectra Bot Builder": {
+    "message": "Spectra Bot Builder",
+    "description": "The label for category Spectra Bot Builder in sidebar tutorialSidebar"
+  }
+}
