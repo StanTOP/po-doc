@@ -12,8 +12,7 @@ sidebar_position: 4
 Подробнее о каталоге можете прочитать далее в документации.
 :::
 
-💬 Наш обученный чат для конструктора:  
-**https://chatgpt.com/g/g-68a75128be50819196a154db54a0da09-konstruktor-signalnykh-botov-dlia-pocket-option**
+💬 Наш обученный чат для конструктора: [Войти в GPT](https://chatgpt.com/g/g-68a75128be50819196a154db54a0da09-konstruktor-signalnykh-botov-dlia-pocket-option)
 
 ![Обзор GPT Spectra Charts](/img/docs/bot/gpt-preview.png)
 
