@@ -1,12 +1,9 @@
 ---
 id: auth-pocket-signals
 title: Как авторизоваться на сайт Pocket Signals
-slug: /getting-started/auth
 sidebar_label: Авторизация на сайте
-description: Пошаговая инструкция входа через Telegram + советы, если не получается авторизация.
-keywords: [Pocket Signals, авторизация, Telegram Login, вход, Много Денег TRADE]
-# при необходимости подправь позицию
 sidebar_position: 3
+description: Пошаговая инструкция входа через Telegram + советы, если не получается авторизация.
 ---
 
 ## Еще не с нами? Зарегистрируйся.
