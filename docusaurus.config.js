@@ -153,9 +153,9 @@ const config = {
 
       // ✅ Algolia Search
       algolia: {
-        appId: '2C9CBPPHSF',
-        apiKey: '64f77c0fc8cd44220c5ce2c959ec0568', // search-only
-        indexName: 'learn_po_signals_com_2c9cbpphsf_pages',
+        appId: 'UV91QE4F1J',
+        apiKey: '8002abe2401ee587030017b8aca7b687', // search-only
+        indexName: 'docs',
         contextualSearch: true,
         placeholder: 'Поиск по документации',
       },
