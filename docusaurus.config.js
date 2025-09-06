@@ -63,21 +63,28 @@ const config = {
         theme: {
           customCss: './src/css/custom.css',
         },
+
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: ['/tags/**'],
+          filename: 'sitemap.xml',
+        },
       }),
     ],
   ],
 
-  plugins: [
-    [
-      '@docusaurus/plugin-sitemap',
-      {
-        changefreq: 'weekly',
-        priority: 0.5,
-        ignorePatterns: ['/tags/**'],
-        filename: 'sitemap.xml',
-      },
-    ],
-  ],
+  // plugins: [
+  //   [
+  //     '@docusaurus/plugin-sitemap',
+  //     {
+  //       changefreq: 'weekly',
+  //       priority: 0.5,
+  //       ignorePatterns: ['/tags/**'],
+  //       filename: 'sitemap.xml',
+  //     },
+  //   ],
+  // ],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
