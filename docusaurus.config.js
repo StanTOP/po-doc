@@ -49,10 +49,6 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          // editUrl:
-          //   'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: {
           showReadingTime: true,
@@ -60,11 +56,6 @@ const config = {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          // editUrl:
-          //   'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
@@ -73,6 +64,18 @@ const config = {
           customCss: './src/css/custom.css',
         },
       }),
+    ],
+  ],
+
+  plugins: [
+    [
+      '@docusaurus/plugin-sitemap',
+      {
+        changefreq: 'weekly',
+        priority: 0.5,
+        ignorePatterns: ['/tags/**'],
+        filename: 'sitemap.xml',
+      },
     ],
   ],
 
@@ -95,12 +98,12 @@ const config = {
             position: 'left',
             label: 'Документация',
           },
-          // {to: '/blog', label: 'Блог', position: 'left'},
           {
             href: 'https://po-signals.com',
             label: 'Pocket Signals',
             position: 'left',
           },
+          { type: 'search', position: 'right' }, // 🔎 добавляем поиск справа
         ],
       },
       footer: {
@@ -131,10 +134,6 @@ const config = {
           {
             title: 'More',
             items: [
-              // {
-              //   label: 'Блог',
-              //   to: '/blog',
-              // },
               {
                 label: 'Телеграм бот',
                 href: 'https://t.me/posignalsrobot',
@@ -144,12 +143,21 @@ const config = {
         ],
         copyright: `© ${new Date().getFullYear()} Все права защищены`,
       },
+
+      // ✅ Algolia Search
+      algolia: {
+        appId: '2C9CBPPHSF',
+        apiKey: '64f77c0fc8cd44220c5ce2c959ec0568', // search-only
+        indexName: 'learn_po_signals_com_2c9cbpphsf_pages',
+        contextualSearch: true,
+        placeholder: 'Поиск по документации',
+      },
+
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
       },
     }),
-
 };
 
 export default config;
