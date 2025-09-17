@@ -4,15 +4,15 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
-import { themes as prismThemes } from 'prism-react-renderer';
+import { themes as prismThemes } from "prism-react-renderer";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Документация для Po-Signals',
-  tagline: 'Pocket Signals — твоя экосистема трейдинга',
-  favicon: 'img/favicon.ico',
+  title: "Документация для Po-Signals",
+  tagline: "Pocket Signals — твоя экосистема трейдинга",
+  favicon: "img/favicon.ico",
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -20,55 +20,55 @@ const config = {
   },
 
   // Set the production url of your site here
-  url: 'https://learn.po-signals.com',
+  url: "https://learn.po-signals.com",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: "/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: "facebook", // Usually your GitHub org/user name.
+  projectName: "docusaurus", // Usually your repo name.
 
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "warn",
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'ru',
-    locales: ['ru'],
-    localeConfigs: { ru: { label: 'Русский' } }
+    defaultLocale: "ru",
+    locales: ["ru"],
+    localeConfigs: { ru: { label: "Русский" } },
   },
 
   presets: [
     [
-      'classic',
+      "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: './sidebars.js',
+          sidebarPath: "./sidebars.js",
         },
         blog: {
           showReadingTime: true,
           feedOptions: {
-            type: ['rss', 'atom'],
+            type: ["rss", "atom"],
             xslt: true,
           },
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
+          onInlineTags: "warn",
+          onInlineAuthors: "warn",
+          onUntruncatedBlogPosts: "warn",
         },
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: "./src/css/custom.css",
         },
 
         sitemap: {
-          changefreq: 'weekly',
+          changefreq: "weekly",
           priority: 0.5,
-          ignorePatterns: ['/tags/**'],
-          filename: 'sitemap.xml',
+          ignorePatterns: ["/tags/**"],
+          filename: "sitemap.xml",
         },
       }),
     ],
@@ -90,60 +90,61 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/po-signals-social-card.jpg',
+      image: "img/po-signals-social-card.jpg",
       navbar: {
-        title: 'Pocket Signals Docs',
+        title: "Pocket Signals Docs",
         logo: {
-          alt: 'Pocket Signals Logo',
-          src: 'img/logo.svg',
-          href: '/docs/', // 👈 сюда отправляем при клике
+          alt: "Pocket Signals Logo",
+          src: "img/logo.svg",
+          href: "/docs/", // 👈 сюда отправляем при клике
         },
         items: [
           {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'Документация',
+            type: "docSidebar",
+            sidebarId: "tutorialSidebar",
+            position: "left",
+            label: "Документация",
           },
+          { to: "blog", label: "Блог", position: "left" },
           {
-            href: 'https://po-signals.com',
-            label: 'Pocket Signals',
-            position: 'left',
+            href: "https://po-signals.com",
+            label: "Pocket Signals",
+            position: "left",
           },
-          { type: 'search', position: 'right' }, // 🔎 добавляем поиск справа
+          { type: "search", position: "right" }, // 🔎 добавляем поиск справа
         ],
       },
       footer: {
-        style: 'dark',
+        style: "dark",
         links: [
           {
-            title: 'Docs',
+            title: "Docs",
             items: [
               {
-                label: 'Документация',
-                to: '/docs/',
+                label: "Документация",
+                to: "/docs/",
               },
             ],
           },
           {
-            title: 'Ресурсы',
+            title: "Ресурсы",
             items: [
               {
-                label: 'YouTube канал',
-                href: 'https://www.youtube.com/channel/UC2xapcQRPujbzjIvmRSQNbg/',
+                label: "YouTube канал",
+                href: "https://www.youtube.com/channel/UC2xapcQRPujbzjIvmRSQNbg/",
               },
               {
-                label: 'Телеграм канал',
-                href: 'https://t.me/mnogodeneg111',
+                label: "Телеграм канал",
+                href: "https://t.me/mnogodeneg111",
               },
             ],
           },
           {
-            title: 'More',
+            title: "More",
             items: [
               {
-                label: 'Телеграм бот',
-                href: 'https://t.me/posignalsrobot',
+                label: "Телеграм бот",
+                href: "https://t.me/posignalsrobot",
               },
             ],
           },
@@ -153,11 +154,11 @@ const config = {
 
       // ✅ Algolia Search
       algolia: {
-        appId: 'UV91QE4F1J',
-        apiKey: '8002abe2401ee587030017b8aca7b687', // search-only
-        indexName: 'docs',
+        appId: "UV91QE4F1J",
+        apiKey: "8002abe2401ee587030017b8aca7b687", // search-only
+        indexName: "docs",
         contextualSearch: true,
-        placeholder: 'Поиск по документации',
+        placeholder: "Поиск по документации",
       },
 
       prism: {
