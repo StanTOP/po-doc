@@ -1,0 +1,4 @@
+bots:
+  label: 'Боты для Pocket Option'
+  permalink: '/bots-pocket-option'
+  description: 'Blog posts related to the Docusaurus framework'
