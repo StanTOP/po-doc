@@ -1,4 +1,18 @@
-bots:
+bots-pocket-option:
   label: 'Боты для Pocket Option'
-  permalink: '/bots-pocket-option'
-  description: 'Blog posts related to the Docusaurus framework'
+guides:
+  label: 'Гайды и учебники'
+for-beginners:
+  label: 'Для новичков'
+indicators:
+  label: 'Индикаторы'
+signals:
+  label: 'Сигналы'
+strategies:
+  label: 'Стратегии'
+liquidity-sweep:
+  label: 'Liquidity Sweep'
+macd:
+  label: 'MACD'
+rsi:
+  label: 'RSI'

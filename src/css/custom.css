@@ -44,4 +44,3 @@ html[data-theme='light'] article .markdown img {
 html[data-theme='dark'] article .markdown img {
   box-shadow: 0 4px 12px rgba(20, 255, 251, 0.496); /* белая мягкая тень */
 }
-
