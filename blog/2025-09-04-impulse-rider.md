@@ -3,7 +3,7 @@ title: "Impulse Rider — трендовый бот на импульсе (RSI +
 description: "Ищет моменты разгона тренда: растущая/падающая гистограмма MACD, фильтр по RSI и позиция цены относительно EMA. Метки BUY/SELL и понятные настройки."
 slug: impulse-rider
 authors: nick
-tags: [Боты для Pocket Option, Стратегии, MACD, RSI]
+tags: [bots]
 hide_table_of_contents: false
 keywords:
   - Pocket Option

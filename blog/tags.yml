@@ -1,18 +1,4 @@
-bots-pocket-option:
-  label: 'Боты для Pocket Option'
-guides:
-  label: 'Гайды и учебники'
-for-beginners:
-  label: 'Для новичков'
+bots:
+  label: 'Боты'
 indicators:
   label: 'Индикаторы'
-signals:
-  label: 'Сигналы'
-strategies:
-  label: 'Стратегии'
-liquidity-sweep:
-  label: 'Liquidity Sweep'
-macd:
-  label: 'MACD'
-rsi:
-  label: 'RSI'

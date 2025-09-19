@@ -3,7 +3,7 @@ title: "MACD Cross — сигналы на пересечении MACD и сиг
 description: "Бот для Pocket Option ставит BUY/SELL при пересечении линии MACD и сигнальной. Периоды EMA настраиваются, метки и цвета — тоже."
 slug: macd-cross
 authors: nick
-tags: [bots, macd, indicators]
+tags: [bots]
 hide_table_of_contents: false
 keywords:
   - Pocket Option

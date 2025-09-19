@@ -3,7 +3,7 @@ title: "Пробой фрактальных уровней (Fractal Edge Breakou
 description: "Бот отмечает BUY/SELL при пробое ближайшего фрактального уровня, с проверкой силы свечи и фильтрами ATR/EMA. Подходит для ловли импульсных выходов из диапазона."
 slug: fractal-edge-breakout
 authors: nick
-tags: [Боты для Pocket Option, Стратегии, Индикаторы]
+tags: [bots]
 hide_table_of_contents: false
 keywords:
   - Pocket Option

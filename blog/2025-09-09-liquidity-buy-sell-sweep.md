@@ -3,7 +3,7 @@ title: "Liquidity Buy/Sell (sweep) — свип ликвидности и вын
 description: "Индикатор отмечает BUY/SELL при свипах ликвидности: прокол ключевого свинга и закрытие обратно. Гибкие настройки: источник цены, окно свинга, допуски ATR/%, сила прокола, фильтры свечи и кулдаун."
 slug: liquidity-buy-sell-sweep
 authors: nick
-tags: [Боты для Pocket Option, Сигналы, Liquidity Sweep, Индикаторы]
+tags: [indicators, bots]
 hide_table_of_contents: false
 keywords:
   - Pocket Option
