@@ -108,13 +108,13 @@ const config = {
             position: "left",
             label: "Документация",
           },
-          { to: "blog", label: "Блог", position: "left" },
 
           // ↓ Новая видимая на ПК кнопка-дропдаун "Категории"
           {
             label: "Категории",
             position: "left",
             items: [
+              { label: "Главная", to: "/blog" },
               { label: "Индикаторы", to: "/blog/tags/indicators" },
               { label: "Боты",       to: "/blog/tags/bots" },
               { label: "Все категории", to: "/blog/tags" },
