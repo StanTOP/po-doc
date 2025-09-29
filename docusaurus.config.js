@@ -60,9 +60,9 @@ const config = {
           onInlineAuthors: "warn",
           onUntruncatedBlogPosts: "warn",
           blogSidebarCount: 0,   // убрать список "Последние посты"
-          blogSidebarTitle: 'Теги', // заголовок слева (необязательно)
-          tags: 'tags.yml',      // использовать blog/tags.yml
-          tagsBasePath: 'tags'   // страницы тегов будут на /blog/tags/...
+          blogSidebarTitle: "Теги",
+          tags: "tags.yml",
+          tagsBasePath: "tags",
         },
         theme: {
           customCss: "./src/css/custom.css",
@@ -93,14 +93,13 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
       image: "img/po-signals-social-card.jpg",
       navbar: {
         title: "Pocket Signals Docs",
         logo: {
           alt: "Pocket Signals Logo",
           src: "img/logo.svg",
-          href: "/docs/", // 👈 сюда отправляем при клике
+          href: "/docs/",
         },
         items: [
           {
@@ -110,22 +109,24 @@ const config = {
             label: "Документация",
           },
           { to: "blog", label: "Блог", position: "left" },
-                    {
+
+          // ↓ Новая видимая на ПК кнопка-дропдаун "Категории"
+          {
             label: "Категории",
             position: "left",
-            className: "poTagsMobileOnly",
             items: [
               { label: "Индикаторы", to: "/blog/tags/indicators" },
               { label: "Боты",       to: "/blog/tags/bots" },
-              { label: "Все категории",   to: "/blog/tags" },
+              { label: "Все категории", to: "/blog/tags" },
             ],
           },
+
           {
             href: "https://po-signals.com",
             label: "Pocket Signals",
             position: "left",
           },
-          { type: "search", position: "right" }, // 🔎 добавляем поиск справа
+          { type: "search", position: "right" },
         ],
       },
       footer: {
@@ -149,7 +150,7 @@ const config = {
               },
               {
                 label: "Телеграм канал",
-                href: "https://t.me/mnogodeneg111",
+                href: "https://t.me/mногodeneg111",
               },
             ],
           },
@@ -166,10 +167,9 @@ const config = {
         copyright: `© ${new Date().getFullYear()} Все права защищены`,
       },
 
-      // ✅ Algolia Search
       algolia: {
         appId: "UV91QE4F1J",
-        apiKey: "8002abe2401ee587030017b8aca7b687", // search-only
+        apiKey: "8002abe2401ee587030017b8aca7b687",
         indexName: "docs",
         contextualSearch: true,
         placeholder: "Поиск по документации",
