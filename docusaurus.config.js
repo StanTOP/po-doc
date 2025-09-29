@@ -59,6 +59,10 @@ const config = {
           onInlineTags: "warn",
           onInlineAuthors: "warn",
           onUntruncatedBlogPosts: "warn",
+          blogSidebarCount: 0,   // убрать список "Последние посты"
+          blogSidebarTitle: 'Теги', // заголовок слева (необязательно)
+          tags: 'tags.yml',      // использовать blog/tags.yml
+          tagsBasePath: 'tags'   // страницы тегов будут на /blog/tags/...
         },
         theme: {
           customCss: "./src/css/custom.css",
@@ -106,6 +110,16 @@ const config = {
             label: "Документация",
           },
           { to: "blog", label: "Блог", position: "left" },
+                    {
+            label: "Категории",
+            position: "left",
+            className: "poTagsMobileOnly",
+            items: [
+              { label: "Индикаторы", to: "/blog/tags/indicators" },
+              { label: "Боты",       to: "/blog/tags/bots" },
+              { label: "Все категории",   to: "/blog/tags" },
+            ],
+          },
           {
             href: "https://po-signals.com",
             label: "Pocket Signals",

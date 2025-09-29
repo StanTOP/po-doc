@@ -44,3 +44,11 @@ html[data-theme='light'] article .markdown img {
 html[data-theme='dark'] article .markdown img {
   box-shadow: 0 4px 12px rgba(20, 255, 251, 0.496); /* белая мягкая тень */
 }
+/* Прятать левый блог-сайдбар на мобильном */
+@media (max-width: 996px) {
+  .poBlogSidebar { display: none; }
+}
+/* Пункт "Теги" показывать только в бургер-меню (мобайл), на ПК скрыть */
+@media (min-width: 997px) {
+  .poTagsMobileOnly { display: none !important; }
+}
