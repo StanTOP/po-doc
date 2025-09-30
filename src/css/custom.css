@@ -1,11 +1,10 @@
 /**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
+ * Global CSS for Docusaurus + iBlog
+ * — компактно и без дублей
  */
 
-/* You can override the default Infima variables here. */
-:root {
+/* ================== Infima base overrides ================== */
+:root{
   --ifm-color-primary: #2e8555;
   --ifm-color-primary-dark: #29784c;
   --ifm-color-primary-darker: #277148;
@@ -14,11 +13,20 @@
   --ifm-color-primary-lighter: #359962;
   --ifm-color-primary-lightest: #3cad6e;
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-}
+  --docusaurus-highlighted-code-line-bg: rgba(0,0,0,.1);
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
+  /* Глобальные цвета фона/свечений (тёмная тема) */
+  --ps-bg-1: #0b1220;
+  --ps-bg-2: #0b1220;
+  --ps-c1: #22c55e;  /* emerald */
+  --ps-c2: #22d3ee;  /* cyan */
+  --ps-c3: #8b5cf6;  /* violet */
+
+  /* Прозрачность верхних карточек (тёмная тема) */
+  --ps-card-bg-dark:        rgba(255,255,255,.06);
+  --ps-card-bg-dark-hover:  rgba(255,255,255,.09);
+}
+[data-theme='dark']{
   --ifm-color-primary: #25c2a0;
   --ifm-color-primary-dark: #21af90;
   --ifm-color-primary-darker: #1fa588;
@@ -26,29 +34,318 @@
   --ifm-color-primary-light: #29d5b0;
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --docusaurus-highlighted-code-line-bg: rgba(0,0,0,.3);
 }
-/* Общие стили для всех картинок */
-article .markdown img {
+/* Светлая палитра фона/свечений + прозрачности верхних карточек */
+html[data-theme='light']{
+  --ps-bg-1: #f7fafc;
+  --ps-bg-2: #ffffff;
+  --ps-c1: #22c55e;
+  --ps-c2: #06b6d4;
+  --ps-c3: #8b5cf6;
+
+  --ps-card-bg-light:       rgba(255,255,255,.88);
+  --ps-card-bg-light-hover: rgba(255,255,255,.94);
+}
+
+/* ================== Article images ================== */
+article .markdown img{
   border-radius: 10px;
   display: block;
   margin: 1rem auto;
 }
+html[data-theme='light'] article .markdown img{ box-shadow: 0 4px 12px rgba(0,0,0,.15); }
+html[data-theme='dark']  article .markdown img{ box-shadow: 0 4px 12px rgba(20,255,251,.5); }
 
-/* Светлая тема */
-html[data-theme='light'] article .markdown img {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* мягкая тень */
+/* ================== Blog helpers ================== */
+@media (max-width: 996px){ .poBlogSidebar{ display:none; } }
+@media (min-width: 997px){ .poTagsMobileOnly{ display:none !important; } }
+
+/* ===================================================================== */
+/* ======================== iBlog layout & cards ======================== */
+/* ===================================================================== */
+.ps-iblog{ position: relative; }
+.ps-hero{ margin-bottom: 1.25rem; text-align: left; }
+.ps-hero__title{ margin: 0 0 .25rem; font-size: 2rem; }
+.ps-hero__sub{ margin: 0; opacity: .8; }
+.ps-hero__actions{ display:flex; gap:.5rem; margin-top:.75rem; flex-wrap:wrap; }
+
+.ps-block{ margin-top: 1.5rem; }
+.ps-block__title{ margin: 0 0 .75rem; }
+
+.ps-grid{ display:grid; gap:14px; }
+.ps-grid--top2{ grid-template-columns: 1fr; }
+@media (min-width:997px){ .ps-grid--top2{ grid-template-columns: repeat(2,1fr); } }
+
+.ps-card__link{ text-decoration:none; }
+
+/* Базовая карточка */
+.ps-card{
+  position: relative;
+  height: 100%;
+  border: 1px solid var(--ifm-toc-border-color);
+  border-radius: 16px;
+  background: rgba(255,255,255,.02);              /* стеклянность (тёмная тема) */
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
+}
+.ps-card__body{ padding: 18px; }
+.ps-card__title{ margin: 0 0 6px; font-size: 1.15rem; line-height: 1.3; color: var(--ifm-font-color-base); }
+.ps-card__desc{ margin: 0; opacity: .85; }
+.ps-card__badge{
+  position: absolute; top: 12px; right: 12px;
+  font-size: .72rem; padding: 4px 8px; border-radius: 999px;
+  border: 1px solid var(--ifm-toc-border-color); opacity: .8;
+}
+.ps-card:hover{
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 12px 30px rgba(0,0,0,.25), 0 0 0 1px color-mix(in srgb, var(--ps-c2) 22%, transparent);
+  border-color: color-mix(in srgb, var(--ps-c2) 22%, var(--ifm-toc-border-color));
 }
 
-/* Тёмная тема */
-html[data-theme='dark'] article .markdown img {
-  box-shadow: 0 4px 12px rgba(20, 255, 251, 0.496); /* белая мягкая тень */
+/* (Опционально) Узкий баннер */
+.ps-card__media{
+  margin: 12px 12px 0; border-radius: 12px; overflow: hidden;
+  aspect-ratio: 16/5; background: rgba(255,255,255,.03);
 }
-/* Прятать левый блог-сайдбар на мобильном */
-@media (max-width: 996px) {
-  .poBlogSidebar { display: none; }
+.ps-card__media img{
+  width:100%; height:100%; object-fit:cover; display:block;
+  transform: scale(1.01); transition: transform .25s ease, opacity .25s ease;
 }
-/* Пункт "Теги" показывать только в бургер-меню (мобайл), на ПК скрыть */
+.ps-card:hover .ps-card__media img{ transform: scale(1.03); }
+
+/* Лента постов */
+.ps-list{ display:grid; gap:16px; }
+.ps-list--2col{ grid-template-columns: 1fr; }
+@media (min-width:997px){ .ps-list--2col{ grid-template-columns: 1fr 1fr; } }
+
+.ps-postRow{
+  display:grid; grid-template-columns:1fr; gap:12px;
+  border:1px solid var(--ifm-toc-border-color);
+  border-radius:16px; padding:12px;
+  background: rgba(255,255,255,.02);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.ps-postRow:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.2);
+  border-color: color-mix(in srgb, var(--ps-c1) 22%, var(--ifm-toc-border-color));
+}
+.ps-postRow__title{ margin:2px 0 6px; font-size:1.15rem; line-height:1.32; }
+
+/* Вид «заголовок слева — кнопка справа снизу» */
+.ps-postRow--simple{ grid-template-columns: 1fr !important; }
+.ps-postRow--simple .ps-postRow__body{
+  display:grid; grid-template-columns: 1fr auto; align-items:start; gap:12px; min-height:80px;
+}
+.ps-postRow--simple .ps-postRow__title{ margin:0; }
+.ps-postRow--simple .ps-postRow__actions{ align-self:end; justify-self:end; }
+
+/* Белая таблетка-кнопка */
+.ps-btn-white{
+  background:#fff !important; color:#0b1220 !important;
+  border:1px solid rgba(0,0,0,.08) !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,.06);
+}
+.ps-btn-white:hover{ background:#f3f5f7 !important; text-decoration:none; }
+
+/* Светлая тема: карточки и элементы ленты — чисто белые */
+html[data-theme='light'] .ps-card,
+html[data-theme='light'] .ps-postRow{
+  background:#fff !important;
+  background-image:none !important;
+  border-color: rgba(0,0,0,.06) !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,.04) !important;
+}
+html[data-theme='light'] .ps-card:hover,
+html[data-theme='light'] .ps-postRow:hover{
+  border-color: rgba(0,0,0,.12) !important;
+  box-shadow: 0 6px 14px rgba(0,0,0,.06) !important;
+}
+html[data-theme='light'] .ps-card__media{
+  border:1px solid rgba(0,0,0,.05) !important;
+  background: linear-gradient(180deg, rgba(0,0,0,.015), rgba(0,0,0,0)) !important;
+}
+
+/* Тёмная тема — белая таблетка заметнее */
+html[data-theme='dark'] .ps-btn-white{
+  background: rgba(255,255,255,.94) !important;
+  color:#0b1220 !important;
+  border:1px solid rgba(255,255,255,.18) !important;
+  box-shadow: 0 2px 14px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.06) inset;
+  -webkit-backdrop-filter: saturate(120%) blur(2px);
+  backdrop-filter: saturate(120%) blur(2px);
+  border-radius: var(--ifm-button-border-radius);
+}
+html[data-theme='dark'] .ps-btn-white:hover{
+  background:#fff !important; box-shadow:0 6px 18px rgba(0,0,0,.55);
+  transform: translateY(-1px);
+}
+.ps-btn-white:focus-visible{ outline:2px solid color-mix(in srgb, var(--ps-c2) 40%, #fff); outline-offset:2px; }
+
+/* ===== Верхние 4 карточки: принудительная прозрачность через ::before ===== */
+.ps-iblog .ps-grid--top2 .ps-card{
+  position: relative;
+  background: none !important;            /* гасим прямые фоны */
+  background-image: none !important;
+}
+.ps-iblog .ps-grid--top2 .ps-card::before{
+  content:""; position:absolute; inset:0; border-radius:16px; z-index:0;
+  background-color: var(--ps-card-bg-dark);
+}
+.ps-iblog .ps-grid--top2 .ps-card:hover::before{
+  background-color: var(--ps-card-bg-dark-hover);
+}
+html[data-theme='light'] .ps-iblog .ps-grid--top2 .ps-card::before{
+  background-color: var(--ps-card-bg-light);
+}
+html[data-theme='light'] .ps-iblog .ps-grid--top2 .ps-card:hover::before{
+  background-color: var(--ps-card-bg-light-hover);
+}
+.ps-iblog .ps-grid--top2 .ps-card > *{ position: relative; z-index: 1; }
+
+/* ===== Иконки в верхних карточках (если используются) ===== */
+.ps-card--icon .ps-card__body{ padding:16px 18px; }
+.ps-card__head{
+  display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:12px;
+}
+.ps-card__icon{
+  width:44px; height:44px; border-radius:12px; display:grid; place-items:center;
+  color:#0b1220; border:1px solid var(--ifm-toc-border-color);
+  box-shadow: 0 6px 16px rgba(0,0,0,.12), inset 0 0 0 1px rgba(255,255,255,.05);
+}
+.ps-card__icon svg{ width:24px; height:24px; }
+html[data-theme='light'] .ps-card__icon{
+  box-shadow: 0 6px 16px rgba(0,0,0,.08), inset 0 0 0 1px rgba(255,255,255,.4);
+  border-color: rgba(0,0,0,.06);
+}
+.ps-card__titles{ display:grid; gap:2px; }
+
+/* ===================================================================== */
+/* ============================ NAVBAR / FOOTER ======================== */
+/* ===================================================================== */
+.navbar{
+  --ps-nav-bg: rgba(16,22,32,.68);
+  --ps-nav-border: rgba(255,255,255,.08);
+  background: var(--ps-nav-bg) !important;
+  -webkit-backdrop-filter: saturate(120%) blur(10px);
+  backdrop-filter: saturate(120%) blur(10px);
+  border-bottom: 1px solid var(--ps-nav-border);
+  box-shadow: 0 8px 24px rgba(0,0,0,.30), 0 1px 0 rgba(255,255,255,.04) inset;
+}
+.navbar .navbar__inner{
+  max-width:none !important;
+  margin:0 !important;
+  padding:0 var(--ifm-navbar-padding-horizontal) !important;
+}
+html[data-theme='light'] .navbar{
+  --ps-nav-bg: rgba(255,255,255,.95);
+  --ps-nav-border: rgba(0,0,0,.06);
+  background: var(--ps-nav-bg) !important;
+  box-shadow: 0 6px 16px rgba(0,0,0,.06), 0 1px 0 rgba(255,255,255,.7) inset !important;
+}
+
+/* Dropdown + DocSearch */
+.dropdown__menu{
+  -webkit-backdrop-filter: saturate(120%) blur(8px);
+  backdrop-filter: saturate(120%) blur(8px);
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow: 0 12px 28px rgba(0,0,0,.25);
+  border-radius: 12px;
+}
+html[data-theme='dark']  .dropdown__menu{ background: rgba(20,26,36,.92); }
+html[data-theme='light'] .dropdown__menu{
+  background: rgba(255,255,255,.95);
+  border-color: rgba(0,0,0,.08);
+  box-shadow: 0 12px 28px rgba(0,0,0,.12);
+}
+.DocSearch-Button{
+  border-radius: 999px;
+  background: rgba(255,255,255,.14);
+  border: 1px solid rgba(255,255,255,.14);
+}
+html[data-theme='light'] .DocSearch-Button{
+  background: rgba(0,0,0,.03);
+  border-color: rgba(0,0,0,.05);
+}
+
+/* Footer (glass) */
+.footer{
+  color: light-dark(#000, #fff);
+  --ps-foot-bg: rgba(16,22,32,.70);
+  --ps-foot-border: rgba(255,255,255,.08);
+  background: var(--ps-foot-bg) !important;
+  -webkit-backdrop-filter: saturate(120%) blur(10px);
+  backdrop-filter: saturate(120%) blur(10px);
+  border-top: 1px solid var(--ps-foot-border);
+  box-shadow: 0 -10px 28px rgba(0,0,0,.28), 0 -1px 0 rgba(255,255,255,.04) inset;
+  border-radius: 16px 16px 0 0;
+  margin-top: 24px;
+}
+.footer .container{ max-width: var(--ifm-container-width-xl); }
+html[data-theme='light'] .footer{
+  --ps-foot-bg: rgba(255,255,255,.95);
+  --ps-foot-border: rgba(0,0,0,.06);
+  background: var(--ps-foot-bg) !important;
+  box-shadow: 0 -8px 18px rgba(0,0,0,.08), 0 -1px 0 rgba(255,255,255,.7) inset !important;
+}
+.footer__title{ color: light-dark(#000, #fff); opacity:.9; }
+.footer__item a{ color: light-dark(#000, #fff); opacity:.9; transition: opacity .15s ease; }
+.footer__item a:hover{ opacity:1; }
+@media (max-width:996px){ .footer{ margin-top:16px; } }
+
+/* ===================================================================== */
+/* ========================= GLOBAL BACKGROUND ========================= */
+/* ===================================================================== */
+/* Сетчатая подложка — СНИЗУ (glow может быть в другом файле/слое) */
+body::after{
+  content:"";
+  position: fixed; inset:0; z-index:-2 !important; pointer-events:none;
+  background:
+    radial-gradient(circle at 1px 1px, rgba(255,255,255,.06) 1px, transparent 1px) 0 0/28px 28px,
+    radial-gradient(circle at 1px 1px, rgba(0,0,0,.06) 1px, transparent 1px) 0 0/28px 28px,
+    linear-gradient(180deg, var(--ps-bg-1), var(--ps-bg-2));
+}
+
+/* ===== BLOG POST: убрать ToC целиком и его правую колонку ===== */
+
+/* 1) Скрываем сам ToC (учитываем модульные классы и aria-label) */
+.theme-blog-post-page :is(
+  [class*="tableOfContents"],
+  nav[aria-label="Table of contents"],
+  aside[aria-label="Table of contents"]
+),
+.blog-post-page :is(
+  [class*="tableOfContents"],
+  nav[aria-label="Table of contents"],
+  aside[aria-label="Table of contents"]
+){
+  display: none !important;
+}
+
+/* 2) Скрываем именно колонку ToC (правая col--2, которая следует за центральной col--7) */
+.theme-blog-post-page .container .row > .col.col--7 ~ .col.col--2,
+.blog-post-page        .container .row > .col.col--7 ~ .col.col--2{
+  display: none !important;
+}
+
+/* 3) Если браузер поддерживает :has — дополнительно режем колонку,
+      когда внутри неё найден ToC (более прицельно, без побочек). */
+@supports selector(.row > .col:has(*)) {
+  .theme-blog-post-page .container .row > .col.col--2:has([class*="tableOfContents"]),
+  .theme-blog-post-page .container .row > .col.col--2:has(nav[aria-label="Table of contents"]),
+  .blog-post-page        .container .row > .col.col--2:has([class*="tableOfContents"]),
+  .blog-post-page        .container .row > .col.col--2:has(nav[aria-label="Table of contents"]) {
+    display: none !important;
+  }
+}
+
+/* 4) Ничего НЕ растягиваем — центральная col--7 остаётся прежней ширины.
+      (Правило-заглушка для ясности; без изменений.) */
 @media (min-width: 997px) {
-  .poTagsMobileOnly { display: none !important; }
+  .theme-blog-post-page .container .row > .col.col--7,
+  .blog-post-page        .container .row > .col.col--7 {
+    /* намеренно пусто — пусть остаётся 7/12 */
+  }
 }

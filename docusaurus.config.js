@@ -95,30 +95,28 @@ const config = {
     ({
       image: "img/po-signals-social-card.jpg",
       navbar: {
-        title: "Pocket Signals Docs",
+        title: "Pocket Signals",
         logo: {
           alt: "Pocket Signals Logo",
           src: "img/logo.svg",
-          href: "/docs/",
+          href: "/iblog/",
         },
         items: [
+                    {
+            label: "Категории",
+            position: "left",
+            items: [
+              { label: "Главная", to: "/iblog" },
+              { label: "Индикаторы", to: "/blog/tags/indicators" },
+              { label: "Боты",       to: "/blog/tags/bots" },
+              { label: "Все категории", to: "/blog/tags" },
+            ],
+          },
           {
             type: "docSidebar",
             sidebarId: "tutorialSidebar",
             position: "left",
             label: "Документация",
-          },
-
-          // ↓ Новая видимая на ПК кнопка-дропдаун "Категории"
-          {
-            label: "Категории",
-            position: "left",
-            items: [
-              { label: "Главная", to: "/blog" },
-              { label: "Индикаторы", to: "/blog/tags/indicators" },
-              { label: "Боты",       to: "/blog/tags/bots" },
-              { label: "Все категории", to: "/blog/tags" },
-            ],
           },
 
           {
